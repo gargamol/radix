@@ -42,7 +42,7 @@ class IdentityAnswerIndustry extends Identity
         $choice = $this->retrieveChoice($doc['legacy']['industry']);
 
         if (null === $choice) {
-            var_dump(sprintf('Could not find answer using "%s" (question %s)', $doc['answer'], $doc['question']));
+            var_dump(sprintf('Unable to lookup Question/Answer for industry using "%s"', $doc['legacy']['industry']));
             return;
         }
 
