@@ -128,7 +128,20 @@ abstract class InputAnswer extends IdentityData
         if (!array_key_exists($legacyId, $this->questions)) {
             $question = $this->getCollectionForModel('question')->findOne(['key' => sprintf('integration-omeda-%s', $legacyId)]);
             if (null === $question) {
-                throw new \Exception(sprintf('Could not find question using "%s"', $legacyId));
+
+                // some legacy merrick data had formatted omeda question/answer differnetly with prefix on it
+                // if not found on legacyId passed, attempt to compensate
+                $pos = strrpos($legacyId, '_');
+                if (false !== $pos) {
+                    $legacyId = substr($legacyId, $pos + 1);
+                    $question = $this->getCollectionForModel('question')->findOne(['key' => sprintf('integration-omeda-%s', $legacyId)]);
+                }
+
+                // if still null, let me know
+                if (null === $question) {
+                    throw new \Exception(sprintf('Could not find question using "%s"', $legacyId));
+                }
+
             }
             $this->questions[$legacyId] = $question;
         }
