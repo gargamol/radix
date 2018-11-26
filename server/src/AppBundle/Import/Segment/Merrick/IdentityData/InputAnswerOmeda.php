@@ -63,7 +63,7 @@ class InputAnswerOmeda extends InputAnswer
                 'value'         => ['id' => $answer, 'type' => 'question-choice']
             ];
         } catch (\Exception $e) {
-            var_dump(__METHOD__, $e->getMessage(), __METHOD__);
+            var_dump($e->getMessage());
         }
     }
 

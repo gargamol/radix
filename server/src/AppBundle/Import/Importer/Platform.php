@@ -29,10 +29,17 @@ abstract class Platform extends Importer implements ImporterInterface
     private $domains = [
         'acbm:ooh'      => 'www.oemoffhighway.com',
         'acbm:fcp'      => 'www.forconstructionpros.com',
-        'cygnus:vspc'   => 'www.vehicleservicepros.com',
-        'cygnus:ofcr'   => 'www.officer.com',
         'acbm:sdce'     => 'www.sdcexec.com',
         'acbm:fl'       => 'www.foodlogistics.com',
+        'acbm:gip'      => 'www.greenindustrypros.com',
+        'cygnus:fhc'    => 'www.firehouse.com',
+        'cygnus:vspc'   => 'www.vehicleservicepros.com',
+        'cygnus:fhc'    => 'www.firehouse.com',
+        'cygnus:siw'    => 'www.securityinfowatch.com',
+        'cygnus:mass'   => 'www.masstransitmag.com',
+        'cygnus:cpa'    => 'www.cpapracticeadvisor.com',
+        'cygnus:vmw'    => 'www.vendingmarketwatch.com',
+        'cygnus:ll'     => 'www.locksmithledger.com'
     ];
 
     /**
